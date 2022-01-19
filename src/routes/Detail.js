@@ -10,12 +10,11 @@ function Detail() {
 
   const getMovie = async () => {
     const json = await (
-      await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
+      await fetch("https://yts.mx/api/v2/movie_details.json?movie_id=" + id)
     ).json();
     console.log(json);
-    setMovie(json.data.movies);
+    setMovie(json.data.movie);
     setLoading(false);
-    console.log(json);
   };
 
   useEffect(() => {
